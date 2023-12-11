@@ -1,10 +1,6 @@
 import { Circles } from 'react-loader-spinner';
-import { useSelector } from 'react-redux';
-import { selectIsLoading } from '../../redux/selectors';
 
 const Loader = () => {
-    const isLoading = useSelector(selectIsLoading);
-
   return (
     <Circles
       height="80"
@@ -13,7 +9,6 @@ const Loader = () => {
       ariaLabel="circles-loading"
       wrapperStyle={{}}
       wrapperClass=""
-      visible={isLoading}
     />
   );
 };

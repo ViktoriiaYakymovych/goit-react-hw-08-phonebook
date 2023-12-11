@@ -16,7 +16,7 @@ import {
 
 const schema = Yup.object().shape({
   name: Yup.string().required('Name is required field').trim(),
-  phone: Yup.number()
+  number: Yup.number()
     .typeError('Must be a number')
     .required('Number is a required field'),
 });
@@ -28,11 +28,13 @@ export const ContactForm = () => {
   const addNewContact = newContact => {
     if (
       contacts.find(
-        contact => contact.name.toLowerCase() === newContact.name.toLowerCase() || contact.phone === newContact.phone
+        contact =>
+          contact.name.toLowerCase() === newContact.name.toLowerCase() ||
+          contact.number === newContact.number
       )
     ) {
       return toast.error(
-        `${newContact.name} or ${newContact.phone} is already added to Your contact's list`
+        `${newContact.name} or ${newContact.number} is already added to Your contact's list`
       );
     }
     dispatch(addContact(newContact));
@@ -40,7 +42,7 @@ export const ContactForm = () => {
 
   return (
     <Formik
-      initialValues={{ name: '', phone: '' }}
+      initialValues={{ name: '', number: '' }}
       validationSchema={schema}
       onSubmit={(values, actions) => {
         addNewContact(values);
@@ -55,8 +57,8 @@ export const ContactForm = () => {
         </Lable>
         <Lable>
           Phone
-          <StyledField name="phone" type="tel" placeholder="Phone..." />
-          <StyledError component="div" name="phone" />
+          <StyledField name="number" type="tel" placeholder="Phone..." />
+          <StyledError component="div" name="number" />
         </Lable>
         <Button type="submit">Add new Contact</Button>
       </StyledForm>
