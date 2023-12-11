@@ -2,8 +2,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
 
-import { fetchContacts } from 'redux/operations';
-import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
+import { fetchContacts } from '../../redux/operations';
+import {
+  selectContacts,
+  selectError,
+  selectIsLoading,
+} from '../../redux/selectors';
 
 import Loader from 'components/Loader/Loader';
 import { ContactForm } from 'components/ContactForm/ContactForm';
@@ -27,7 +31,7 @@ export const App = () => {
       <Section title="Phonebook">
         <ContactForm />
       </Section>
-      {isLoading && !error && <Loader/>}
+      {isLoading && !error && <Loader />}
       {contacts.length > 0 ? (
         <Section title="Contacts">
           <Filter />

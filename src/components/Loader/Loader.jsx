@@ -1,6 +1,6 @@
 import { Circles } from 'react-loader-spinner';
 import { useSelector } from 'react-redux';
-import { selectIsLoading } from 'redux/selectors';
+import { selectIsLoading } from '../../redux/selectors';
 
 const Loader = () => {
     const isLoading = useSelector(selectIsLoading);

@@ -3,8 +3,8 @@ import toast from 'react-hot-toast';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
-import { addContact } from 'redux/operations';
-import { selectContacts } from 'redux/selectors';
+import { addContact } from '../../redux/operations';
+import { selectContacts } from '../../redux/selectors';
 
 import {
   StyledForm,

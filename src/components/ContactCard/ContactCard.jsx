@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { ListWrapper, Button } from './ContactCard.styled';
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from '../../redux/operations';
 
 export const ContactCard = ({ contact: { id, name, phone } }) => {
   const dispatch = useDispatch();
