@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { logOut } from '../../redux/auth/operations';
 import { fetchContacts, addContact, deleteContact } from './operations';
 
 const contactsInitialState = {
@@ -49,7 +50,12 @@ const contactsSlice = createSlice({
       .addCase(deleteContact.rejected, handleRejected)
       .addCase(fetchContacts.fulfilled, handleFetchContacts)
       .addCase(addContact.fulfilled, handleAddContact)
-      .addCase(deleteContact.fulfilled, handleDeleteContact),
+      .addCase(deleteContact.fulfilled, handleDeleteContact)
+      .addCase(logOut.fulfilled, state => {
+        state.contacts = [];
+        state.error = null;
+        state.isLoading = false;
+      }),
 });
 
 export const { fetchingInProgress, fetchingSuccess, fetchingError } =
