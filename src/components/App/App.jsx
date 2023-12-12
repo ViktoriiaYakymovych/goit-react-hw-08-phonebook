@@ -15,6 +15,8 @@ import { Section } from 'components/Section/Section';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
 import { Layout } from 'components/Layout';
+// import { LoginForm } from '../LoginForm/LoginForm';
+// import { RegisterForm } from '../RegisterForm/RegisterForm';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -28,6 +30,8 @@ export const App = () => {
 
   return (
     <Layout>
+      {/* <RegisterForm/>
+      <LoginForm/> */}
       <Section title="Phonebook">
         <ContactForm />
       </Section>
