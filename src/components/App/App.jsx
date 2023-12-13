@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { refreshUser } from '../../redux/auth/operations';
 import { useAuth } from 'hooks';
 import RestrictedRoute from '../../components/RestrictedRoute';
+import PrivateRoute from '../../components/PrivateRoute';
 import Layout from '../Layout';
 import Loader from '../../components/Loader/Loader';
 
@@ -44,7 +45,7 @@ export const App = () => {
         <Route
           path="/contacts"
           element={
-            <RestrictedRoute redirectTo="/login" component={<ContactsPage />} />
+            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
           }
         />
       </Route>
