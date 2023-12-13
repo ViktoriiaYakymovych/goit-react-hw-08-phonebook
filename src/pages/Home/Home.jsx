@@ -1,5 +1,9 @@
 const Home = () => {
-  return <h1>Your contacts list will be here</h1>;
+  return (
+    <section>
+      <h1>Your phonebook will be here</h1>
+    </section>
+  );
 };
 
 export default Home;

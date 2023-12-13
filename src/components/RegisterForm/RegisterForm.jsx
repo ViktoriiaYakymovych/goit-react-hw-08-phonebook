@@ -17,6 +17,7 @@ export const RegisterForm = () => {
       initialValues={{ name: '', email: '', password: '' }}
       validationSchema={schema}
       onSubmit={(values, actions) => {
+        console.log(values);
         dispatch(register(values));
         actions.resetForm();
       }}

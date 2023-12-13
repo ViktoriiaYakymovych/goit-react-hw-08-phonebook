@@ -7,8 +7,10 @@ const AppBar = () => {
   const { isLoggedIn } = useAuth();
   return (
     <header>
-      <Navigation />
-      {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      <nav>
+        <Navigation />
+        {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      </nav>
     </header>
   );
 };
