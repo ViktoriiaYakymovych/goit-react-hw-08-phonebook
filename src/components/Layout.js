@@ -1,12 +1,18 @@
-import styled from 'styled-components';
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import AppBar from '../components/AppBar/AppBar';
 
-export const Layout = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  max-width: 700px;
-  padding: 16px;
-  border: 2px black solid;
-`;
+const Layout = () => {
+  return (
+    <>
+      <AppBar />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
+      <Toaster position="top-center" />
+    </>
+  );
+};
+
+export default Layout;
