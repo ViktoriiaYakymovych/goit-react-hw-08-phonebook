@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/544.b27b2c24.chunk.js","mappings":"4JAIA,UAJa,WACX,OAAOA,EAAAA,EAAAA,KAAA,MAAAC,SAAI,mCACb,C","sources":["pages/Home/Home.jsx"],"sourcesContent":["const Home = () => {\n  return <h1>Your contacts list will be here</h1>;\n};\n\nexport default Home;\n"],"names":["_jsx","children"],"sourceRoot":""}
