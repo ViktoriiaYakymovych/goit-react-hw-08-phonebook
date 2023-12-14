@@ -14,7 +14,7 @@ const Home = () => {
             <span style={{ color: '#33b1eb' }}>
               <Link to="/login">Press here </Link>
             </span>
-            to login.
+            to log in.
           </li>
           <li>
             Don't have account yet?{' '}
