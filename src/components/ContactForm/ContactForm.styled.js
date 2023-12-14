@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form } from 'formik';
 import styled from 'styled-components';
 
 export const StyledForm = styled(Form)`
-width: 320px;
+  width: 320px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -29,6 +29,6 @@ export const Button = styled.button`
   background-color: transparent;
   &:hover,
   &:focus {
-    border-color: green;
+    color: green;
   }
 `;
