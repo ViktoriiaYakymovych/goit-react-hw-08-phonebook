@@ -39,6 +39,7 @@ export const LoginForm = () => {
             name="password"
             type="password"
             placeholder="Password..."
+            autoComplete="false"
           />
           <StyledError component="div" name="password" />
         </Label>

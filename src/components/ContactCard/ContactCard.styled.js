@@ -13,6 +13,7 @@ border: 1px solid black;
 export const Button = styled.button`
   padding: 4px;
   border: 1px solid black;
+  border-radius: 6px;
   background-color: transparent;
   &:hover,
   &:focus {
