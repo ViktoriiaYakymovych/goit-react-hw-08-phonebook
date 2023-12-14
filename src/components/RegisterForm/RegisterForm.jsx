@@ -2,11 +2,21 @@ import { useDispatch } from 'react-redux';
 import { Formik, ErrorMessage, Field, Form } from 'formik';
 import * as Yup from 'yup';
 import { register } from '../../redux/auth/operations';
+import {
+  StyledForm,
+  StyledField,
+  StyledError,
+  Label,
+  Button,
+} from '../ContactForm/ContactForm.styled';
 
 const schema = Yup.object().shape({
   name: Yup.string().required('Name is required field').trim(),
   email: Yup.string().required('Email is required field').trim(),
-  password: Yup.string().required('Password is a required field'),
+  password: Yup.string()
+    .required('Password is a required field')
+    .min(8, 'Password has to contain at least 8 symbols')
+    .max(16, 'Password has to contain at most 16 symbols'),
 });
 
 export const RegisterForm = () => {
@@ -17,29 +27,32 @@ export const RegisterForm = () => {
       initialValues={{ name: '', email: '', password: '' }}
       validationSchema={schema}
       onSubmit={(values, actions) => {
-        console.log(values);
         dispatch(register(values));
         actions.resetForm();
       }}
     >
-      <Form>
-        <label>
+      <StyledForm>
+        <Label>
           Name
-          <Field name="name" type="text" placeholder="Name..." />
-          <ErrorMessage component="div" name="name" />
-        </label>
-        <label>
+          <StyledField name="name" type="text" placeholder="Name..." />
+          <StyledError component="div" name="name" />
+        </Label>
+        <Label>
           Email
-          <Field name="email" type="email" placeholder="Email..." />
-          <ErrorMessage component="div" name="email" />
-        </label>
-        <label>
+          <StyledField name="email" type="email" placeholder="Email..." />
+          <StyledError component="div" name="email" />
+        </Label>
+        <Label>
           Password
-          <Field name="password" type="password" placeholder="Password..." />
-          <ErrorMessage component="div" name="password" />
-        </label>
-        <button type="submit">Register</button>
-      </Form>
+          <StyledField
+            name="password"
+            type="password"
+            placeholder="Password..."
+          />
+          <StyledError component="div" name="password" />
+        </Label>
+        <Button type="submit">Register</Button>
+      </StyledForm>
     </Formik>
   );
 };

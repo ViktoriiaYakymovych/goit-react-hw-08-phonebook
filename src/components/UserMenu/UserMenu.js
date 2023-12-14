@@ -11,12 +11,12 @@ const UserMenu = () => {
   };
 
   return (
-    <>
-      <p>Welcome, {user.name}</p>
+    <div>
+      <p>{user.email}</p>
       <button type="button" onClick={handleLogOut}>
         Log Out
       </button>
-    </>
+    </div>
   );
 };
 

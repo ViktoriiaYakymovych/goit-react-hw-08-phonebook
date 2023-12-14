@@ -2,6 +2,13 @@ import { useDispatch } from 'react-redux';
 import { Formik, ErrorMessage, Field, Form } from 'formik';
 import * as Yup from 'yup';
 import { logIn } from '../../redux/auth/operations';
+import {
+  StyledForm,
+  StyledField,
+  StyledError,
+  Button,
+  Label,
+} from '../ContactForm/ContactForm.styled';
 
 const schema = Yup.object().shape({
   email: Yup.string().required('Email is required field').trim(),
@@ -20,19 +27,23 @@ export const LoginForm = () => {
         actions.resetForm();
       }}
     >
-      <Form>
-        <label>
+      <StyledForm>
+        <Label>
           Email
-          <Field name="email" type="email" placeholder="Email..." />
-          <ErrorMessage component="div" name="email" />
-        </label>
-        <label>
+          <StyledField name="email" type="email" placeholder="Email..." />
+          <StyledError component="div" name="email" />
+        </Label>
+        <Label>
           Password
-          <Field name="password" type="password" placeholder="Password..." />
-          <ErrorMessage component="div" name="password" />
-        </label>
-        <button type="submit">Log In</button>
-      </Form>
+          <StyledField
+            name="password"
+            type="password"
+            placeholder="Password..."
+          />
+          <StyledError component="div" name="password" />
+        </Label>
+        <Button type="submit">Log In</Button>
+      </StyledForm>
     </Formik>
   );
 };

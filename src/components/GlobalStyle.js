@@ -16,12 +16,12 @@ code {
     monospace;
 }
 body {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   gap: 24px;
   padding: 16px;
   margin: 0 auto;
-  color: black;
+  color: black; */
   background: #EEF2F7;
 }
 
@@ -46,12 +46,14 @@ p {
 }
 
 ul,
-ol {
+ol,
+dl {
   margin: 0;
   padding: 0;
 }
 
-li {
+li, 
+dt {
   list-style: none;
 }
 

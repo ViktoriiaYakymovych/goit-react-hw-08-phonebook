@@ -8,7 +8,7 @@ import { selectContacts } from '../../redux/contacts/selectors';
 
 import {
   StyledForm,
-  Lable,
+  Label,
   StyledField,
   StyledError,
   Button,
@@ -50,16 +50,16 @@ export const ContactForm = () => {
       }}
     >
       <StyledForm>
-        <Lable>
+        <Label>
           Name
           <StyledField name="name" type="text" placeholder="Name..." />
           <StyledError component="div" name="name" />
-        </Lable>
-        <Lable>
+        </Label>
+        <Label>
           Phone
           <StyledField name="number" type="tel" placeholder="Phone..." />
           <StyledError component="div" name="number" />
-        </Lable>
+        </Label>
         <Button type="submit">Add new Contact</Button>
       </StyledForm>
     </Formik>

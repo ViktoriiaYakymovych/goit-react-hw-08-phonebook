@@ -1,8 +1,12 @@
+import { StyledMain, StyledSection } from "./Section.styled";
+
 export const Section = ({title, children}) => {
 return (
-    <section>
-    <h2>{title}</h2>
-    {children}
-    </section>
-)
+  <StyledMain>
+    <StyledSection>
+      <h2>{title}</h2>
+      {children}
+    </StyledSection>
+  </StyledMain>
+);
 }
