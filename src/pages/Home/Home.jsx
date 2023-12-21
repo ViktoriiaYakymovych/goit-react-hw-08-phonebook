@@ -5,6 +5,7 @@ import {
 } from '../../components/Section/Section.styled';
 
 const Home = () => {
+
   return (
     <StyledMain>
       <StyledSection>
